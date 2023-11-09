@@ -1,12 +1,11 @@
 import ScooterCard from "../component/ScooterCard"
-import { apiKey } from "@/api/apiKey";
 
 //Parameters from RapidAPI
-const url = 'https://aliexpress-datahub.p.rapidapi.com/item_search?q=scooter&sort=latest&region=ES&currency=EUR';
+const url = process.env.DB_HOST_RAPIDAPI+'item_search?q=scooter&sort=latest&region=ES&currency=EUR';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': apiKey,
+		'X-RapidAPI-Key': process.env.KEY_RAPIDAPI,
 		'X-RapidAPI-Host': 'aliexpress-datahub.p.rapidapi.com'
 	}
 };
