@@ -10,15 +10,6 @@ const options = {
 	}
 };
 
-const url2 = 'https://aliexpress-datahub.p.rapidapi.com/item_detail?itemId=';
-const options2 = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': process.env.KEY_RAPIDAPI,
-		'X-RapidAPI-Host': 'aliexpress-datahub.p.rapidapi.com'
-	}
-};
-
 //Get data from json-server, Products
 async function getProducts() {
     const res = await fetch(url,options)
