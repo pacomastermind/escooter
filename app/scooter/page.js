@@ -47,7 +47,7 @@ export default async function Scooter({searchParams}) {
             <div className="d-flex p-2 flex-wrap justify-content-between">
             {
                     products.map(product=>(
-                        <ScooterCard key={product.id} img={product.img} modelo={product.modelo} txt={product.txt}  id={product.id}/>
+                        <ScooterCard key={product.id} img={"./img/" + product.img} modelo={product.modelo} txt={product.txt}  id={product.id}/>
                         )
                     )
             }

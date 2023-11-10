@@ -4,7 +4,7 @@ export default function ScooterCard({img,modelo,txt,id}){
     return(
         <div className="card mb-2" style={{ width: "15rem" }}>
             <img
-                src={"./img/" + img}
+                src={img}
                 className="card-img-top p-4"
                 alt="..."
             />

@@ -10,6 +10,15 @@ const options = {
 	}
 };
 
+const url2 = 'https://aliexpress-datahub.p.rapidapi.com/item_detail?itemId=';
+const options2 = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': process.env.KEY_RAPIDAPI,
+		'X-RapidAPI-Host': 'aliexpress-datahub.p.rapidapi.com'
+	}
+};
+
 //Get data from json-server, Products
 async function getProducts() {
     const res = await fetch(url,options)
@@ -37,7 +46,7 @@ export default async function Importacion() {
                 <div className="d-flex p-2 flex-wrap justify-content-between">
                 {
                     products.map(product=>(
-                        <ScooterCard key={product.item.itemId} img={product.item.image} modelo="Desconocido" txt={product.item.title}  id={product.item.itemId}/>
+                        <ScooterCard key={product.item.itemId} img={product.item.image} modelo={(product.item.title).split(' ').slice(0,2).join(' ')} txt={product.item.title}  id={product.item.itemId}/>
                         )
                     )
                 }                    
